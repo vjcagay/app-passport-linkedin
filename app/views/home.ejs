@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>App Login via Linkedin - Home</title>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	</head>
+	<body>
+		<header class="navbar navbar-default" role="banner">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">Sample App</a>
+				</div>
+				<ul class="nav navbar-nav navbar-right navbar-collapse">
+					<li><a href="#"><%= user.displayName %></a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</div>
+		</header>
+		<div class="container">
+			<div class="text-center">
+				<img src="<%= user._json.pictureUrl %>">
+				<h3><%= user.displayName %></h3>
+			</div>
+			<h4>Employment History</h4>
+			<% if ( user._json.positions.values.length ) { %>
+				<table class="table table-striped">
+					<tr>
+						<th>Title</th>
+						<td><%= user._json.positions.values[0].title %></td>
+					</tr>
+					<tr>
+						<th>Industry</th>
+						<td><%= user._json.positions.values[0].company.industry %></td>
+					</tr>
+					<tr>
+						<th>Name</th>
+						<td><%= user._json.positions.values[0].company.name %></td>
+					</tr>
+					<tr>
+						<th>Size</th>
+						<td><%= user._json.positions.values[0].company.size %></td>
+					</tr>
+					<tr>
+						<th>Type</th>
+						<td><%= user._json.positions.values[0].company.type %></td>
+					</tr>
+					<tr>
+						<th>Currently Working</th>
+						<td>
+							<% if ( user._json.positions.values[0].isCurrent ) { %>
+								Yes
+							<% } else { %>
+								No
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>Summary</th>
+						<td><%= user._json.positions.values[0].summary %></td>
+					</tr>
+				</table>
+			<% } else { %>
+				You have not specified any employment in your Linkedin account.
+			<% } %>
+		</div>
+	</body>
+</html>

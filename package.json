@@ -1,0 +1,26 @@
+{
+  "name": "app-passport-linkedin",
+  "version": "1.0.0",
+  "description": "App login using Linkedin Strategy in PassportJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "VJ Cagay",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "cookie-parser": "^1.3.5",
+    "ejs": "^2.3.3",
+    "express": "^4.13.1",
+    "express-session": "^1.11.3",
+    "method-override": "^2.3.4",
+    "passport": "^0.2.2",
+    "passport-linkedin": "^0.1.3"
+  },
+  "devDependencies": {
+    "ip": "^0.3.3",
+    "open": "0.0.5"
+  }
+}
